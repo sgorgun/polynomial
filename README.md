@@ -8,3 +8,5 @@
 >   - subtraction   
 >   - *division (optional)*   
 >   - equality and inequality tests.   
+
+*Topics - standard equality protocols, equality comparison, value versus referential equality, virtual methods, inheritance, interfaces.*
