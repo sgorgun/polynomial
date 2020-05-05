@@ -48,11 +48,11 @@ namespace PolynomialTask.Tests
         public bool Equals_With_Object_Parameter(Polynomial polynomial, object obj)
             => polynomial.Equals(obj);
 
-        [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForVirtualToString))]
+        [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForToString))]
         public string ToString_Return_Polynomial_String_Representation(Polynomial polynomial)
             => polynomial.ToString();
 
-        [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForVirtualGetHashCode))]
+        [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForGetHashCode))]
         public void GetHashCode_Polynomial_Are_Equals_Thus_GetHashCode_Are_Equals(Polynomial polynomial,
             Polynomial other)
         {

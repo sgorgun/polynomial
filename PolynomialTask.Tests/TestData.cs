@@ -99,7 +99,7 @@ namespace PolynomialTask.Tests
             }
         }
 
-        public static IEnumerable<TestCaseData> TestCasesForVirtualToString
+        public static IEnumerable<TestCaseData> TestCasesForToString
         {
             get
             {
@@ -117,7 +117,7 @@ namespace PolynomialTask.Tests
             }
         }
 
-        public static IEnumerable<TestCaseData> TestCasesForVirtualGetHashCode
+        public static IEnumerable<TestCaseData> TestCasesForGetHashCode
         {
             get
             {
@@ -212,7 +212,7 @@ namespace PolynomialTask.Tests
                 yield return new TestCaseData(new Polynomial(-3, 0.014, 1.004, 0));
             }
         }
-        
+
         public static IEnumerable<TestCaseData> TestCasesForIndexer
         {
             get
@@ -223,7 +223,7 @@ namespace PolynomialTask.Tests
                 yield return new TestCaseData(new Polynomial(-3, 0.014, 1.004, 0), 0).Returns(-3);
             }
         }
-        
+
         public static IEnumerable<TestCaseData> TestCasesForGetCoefficients
         {
             get
@@ -233,7 +233,7 @@ namespace PolynomialTask.Tests
                 yield return new TestCaseData(new Polynomial(new double[] {-3, 0.014, 1.004, 0}));
             }
         }
-        
+
         public static IEnumerable<TestCaseData> TestCasesForConstructor
         {
             get
@@ -243,7 +243,7 @@ namespace PolynomialTask.Tests
                 yield return new TestCaseData(new double[] {-3, 0.014, 1.004, 0});
             }
         }
-        
+
         public static IEnumerable<TestCaseData> TestCasesForIndexerException
         {
             get
@@ -254,7 +254,7 @@ namespace PolynomialTask.Tests
                 yield return new TestCaseData(new Polynomial(-3, 0.014, 1.004, 9), 12);
             }
         }
-        
+
         public static IEnumerable<TestCaseData> TestCasesForOperationException
         {
             get
@@ -264,7 +264,7 @@ namespace PolynomialTask.Tests
                 yield return new TestCaseData(null, null);
             }
         }
-        
+
         public static IEnumerable<TestCaseData> TestCasesForCalculateValue
         {
             get
@@ -274,7 +274,7 @@ namespace PolynomialTask.Tests
                 yield return new TestCaseData(new Polynomial(3, 0.014, 1.004, 0), -0.5, 0.991);
                 yield return new TestCaseData(new Polynomial(1.21394, 2.001, 3.3), 1.5, 9.77241);
                 yield return new TestCaseData(new Polynomial(-1, 0.2, 3.313, 0.004, 0.05, 0.16), 1.5, 4.0905);
-                yield return new TestCaseData(new Polynomial(3, 0.014, 1.004, 0), 1.5,  -2.973);
+                yield return new TestCaseData(new Polynomial(3, 0.014, 1.004, 0), 1.5, -2.973);
             }
         }
     }

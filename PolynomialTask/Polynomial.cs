@@ -107,7 +107,7 @@ namespace PolynomialTask
         /// <param name="lhs">Left-hand side operand.</param>
         /// <param name="rhs">Right-hand side operand.</param>
         /// <returns>The sum of two polynomials.</returns>
-        /// <exception cref="ArgumentNullException">Left-hand side operand or Right-hand side operand is null.</exception>
+        /// <exception cref="ArgumentNullException">Left-hand side operand or right-hand side operand is null.</exception>
         public static Polynomial operator +(Polynomial lhs, Polynomial rhs)
         {
             throw new NotImplementedException("You need to implement this function.");
@@ -119,7 +119,7 @@ namespace PolynomialTask
         /// <param name="lhs">Left-hand side operand.</param>
         /// <param name="rhs">Right-hand side operand.</param>
         /// <returns>The difference of two polynomials.</returns>
-        /// <exception cref="ArgumentNullException">Left-hand side operand or Right-hand side operand is null.</exception>
+        /// <exception cref="ArgumentNullException">Left-hand side operand or right-hand side operand is null.</exception>
         public static Polynomial operator -(Polynomial lhs, Polynomial rhs)
         {
             throw new NotImplementedException("You need to implement this function.");
@@ -131,7 +131,7 @@ namespace PolynomialTask
         /// <param name="lhs">Left-hand side operand.</param>
         /// <param name="rhs">Right-hand side operand.</param>
         /// <returns>The product of two polynomials.</returns>
-        /// <exception cref="ArgumentNullException">Left-hand side operand or Right-hand side operand is null.</exception>
+        /// <exception cref="ArgumentNullException">Left-hand side operand or right-hand side operand is null.</exception>
         public static Polynomial operator *(Polynomial lhs, Polynomial rhs)
         {
             throw new NotImplementedException("You need to implement this function.");
@@ -167,7 +167,7 @@ namespace PolynomialTask
         /// <param name="lhs">Left-hand side operand.</param>
         /// <param name="rhs">Right-hand side operand polynomial.</param>
         /// <returns>The sum of two polynomials.</returns>
-        /// <exception cref="ArgumentNullException">Left-hand side operand or Right-hand side operand is null.</exception>
+        /// <exception cref="ArgumentNullException">Left-hand side operand or right-hand side operand is null.</exception>
         public static Polynomial Add(Polynomial lhs, Polynomial rhs)
         {
             throw new NotImplementedException("You need to implement this function.");
@@ -179,7 +179,7 @@ namespace PolynomialTask
         /// <param name="lhs">Left-hand side operand.</param>
         /// <param name="rhs">Right-hand side operand polynomial.</param>
         /// <returns>The difference of two polynomials.</returns>
-        /// <exception cref="ArgumentNullException">Left-hand side operand or Right-hand side operand is null.</exception>
+        /// <exception cref="ArgumentNullException">Left-hand side operand or right-hand side operand is null.</exception>
         public static Polynomial Subtract(Polynomial lhs, Polynomial rhs)
         {
             throw new NotImplementedException("You need to implement this function.");
