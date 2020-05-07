@@ -8,7 +8,7 @@ namespace PolynomialTask.Tests
     public class PolynomialTests
     {
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForConstructor))]
-        public void Constructor_Use_Deep_Copy_Of_Coefficients(double[] coefficients)
+        public void Constructor_UseDeepCopyOfCoefficients(double[] coefficients)
         {
             Polynomial polynomial = new Polynomial(coefficients);
 
@@ -26,14 +26,14 @@ namespace PolynomialTask.Tests
         }
 
         [Test]
-        public void Constructor_Array_Is_Null_Throw_ArgumentNullException()
+        public void Constructor_ArrayIsNull_ThrowArgumentNullException()
             => Assert.Throws<ArgumentNullException>(() =>
             {
                 var polynomial = new Polynomial(null);
             }, "Coefficients cannot be null.");
 
         [Test]
-        public void Constructor_Array_Is_Empty_Throw_ArgumentException()
+        public void Constructor_ArrayIsEmpty_ThrowArgumentException()
             => Assert.Throws<ArgumentException>(() =>
                 {
                     var polynomial = new Polynomial(new double[] { });
@@ -41,19 +41,19 @@ namespace PolynomialTask.Tests
                 "Coefficients cannot be empty.");
 
         [Test]
-        public void Constructor_Array_Is_Null_Throw_ArgumentException()
+        public void Constructor_ArrayIsNull_ThrowArgumentException()
             => Assert.Throws<ArgumentNullException>(() => new Polynomial(null));
 
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForVirtualEquals))]
-        public bool Equals_With_Object_Parameter(Polynomial polynomial, object obj)
+        public bool Equals_WithObjectParameter(Polynomial polynomial, object obj)
             => polynomial.Equals(obj);
 
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForToString))]
-        public string ToString_Return_Polynomial_String_Representation(Polynomial polynomial)
+        public string ToString_ReturnPolynomialStringRepresentation(Polynomial polynomial)
             => polynomial.ToString();
 
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForGetHashCode))]
-        public void GetHashCode_Polynomial_Are_Equals_Thus_GetHashCode_Are_Equals(Polynomial polynomial,
+        public void GetHashCode_PolynomialAreEquals_Thus_GetHashCodeAreEquals(Polynomial polynomial,
             Polynomial other)
         {
             Assert.Multiple(() =>
@@ -64,7 +64,7 @@ namespace PolynomialTask.Tests
         }
 
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForInterfaceEquals))]
-        public bool Equals_With_Polynomial_Parameter(Polynomial polynomial, Polynomial other)
+        public bool Equals_WithPolynomialParameter(Polynomial polynomial, Polynomial other)
             => polynomial.Equals(other);
 
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForInterfaceEquals))]
@@ -76,7 +76,7 @@ namespace PolynomialTask.Tests
             => !(lhs != rhs);
 
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForAddition))]
-        public void Addition_Of_Polynomials(Polynomial lhs, Polynomial rhs, Polynomial sum)
+        public void AdditionOfPolynomials(Polynomial lhs, Polynomial rhs, Polynomial sum)
         {
             Assert.Multiple(() =>
             {
@@ -86,7 +86,7 @@ namespace PolynomialTask.Tests
         }
         
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForOperationException))]
-        public void Addition_One_Of_Polynomials_Is_Equals_Null_Throw_ArgumentNullException(Polynomial lhs, Polynomial rhs)
+        public void Addition_OneOfPolynomialsIsEqualsNull_ThrowArgumentNullException(Polynomial lhs, Polynomial rhs)
         {
             Assert.Throws<ArgumentNullException>(() =>
             {
@@ -95,7 +95,7 @@ namespace PolynomialTask.Tests
         }
 
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForSubtraction))]
-        public void Subtraction_Of_Polynomials(Polynomial lhs, Polynomial rhs, Polynomial difference)
+        public void SubtractionOfPolynomials(Polynomial lhs, Polynomial rhs, Polynomial difference)
         {
             Assert.Multiple(() =>
             {
@@ -105,7 +105,7 @@ namespace PolynomialTask.Tests
         }
         
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForOperationException))]
-        public void Subtraction_One_Of_Polynomials_Is_Equals_Null_Throw_ArgumentNullException(Polynomial lhs, Polynomial rhs)
+        public void Subtraction_OneOfPolynomialsIsEqualsNull_ThrowArgumentNullException(Polynomial lhs, Polynomial rhs)
         {
             Assert.Throws<ArgumentNullException>(() =>
             {
@@ -114,7 +114,7 @@ namespace PolynomialTask.Tests
         }
 
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForMultiplication))]
-        public void Multiplication_Of_Polynomials(Polynomial lhs, Polynomial rhs, Polynomial product)
+        public void MultiplicationOfPolynomials(Polynomial lhs, Polynomial rhs, Polynomial product)
         {
             Assert.Multiple(() =>
             {
@@ -124,7 +124,7 @@ namespace PolynomialTask.Tests
         }
 
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForOperationException))]
-        public void Multiplication_One_Of_Polynomials_Is_Equals_Null_Throw_ArgumentNullException(Polynomial lhs, Polynomial rhs)
+        public void Multiplication_OneOfPolynomialsIsEqualsNull_ThrowArgumentNullException(Polynomial lhs, Polynomial rhs)
         {
             Assert.Throws<ArgumentNullException>(() =>
             {
@@ -133,7 +133,7 @@ namespace PolynomialTask.Tests
         }
         
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForClone))]
-        public void Clone_Return_Shallow_Copy_Of_Polynomial(Polynomial polynomial)
+        public void Clone_Return_ShallowCopyOfPolynomial(Polynomial polynomial)
         {
             Polynomial clone = (Polynomial) polynomial.Clone();
 
@@ -148,18 +148,18 @@ namespace PolynomialTask.Tests
         }
 
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForIndexer))]
-        public double Indexer_Return_Coefficient_By_Index(Polynomial polynomial, int index)
+        public double Indexer_ReturnCoefficientByIndex(Polynomial polynomial, int index)
             => polynomial[index];
 
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForIndexerException))]
-        public void Indexer_Index_Out_Of_Degree_Throw_ArgumentOutOfRangeException(Polynomial polynomial, int index)
+        public void Indexer_IndexOutOfDegree_ThrowArgumentOutOfRangeException(Polynomial polynomial, int index)
             => Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 var value = polynomial[index];
             });
 
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForGetCoefficients))]
-        public void GetCoefficients_Return_Copy_Of_Coefficients(Polynomial polynomial)
+        public void GetCoefficients_Return_CopyOfCoefficients(Polynomial polynomial)
         {
             FieldInfo fieldInfo = polynomial.GetType()
                 .GetField("coefficients", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -176,7 +176,7 @@ namespace PolynomialTask.Tests
         }
 
         [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForCalculateValue))]
-        public void CalculateValue(Polynomial polynomial, double x, double value)
+        public void CalculateValue_Return_ValueInPoint(Polynomial polynomial, double x, double value)
         {
             Assert.AreEqual(value,polynomial.CalculateValue(x),TestData.Tolerance);
         }
