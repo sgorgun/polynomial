@@ -13,7 +13,8 @@ namespace PolynomialTask
         /// <summary>
         ///  Internal structure for storing coefficients of polynomial.
         /// </summary>
-        private readonly double[] coefficients;
+        //TODO Remove comment above
+        //private readonly double[] coefficients;
 
         /// <summary>
         /// Initializes Polynomial class.
