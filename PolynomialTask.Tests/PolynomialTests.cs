@@ -44,7 +44,7 @@ namespace PolynomialTask.Tests
         public void Constructor_ArrayIsNull_ThrowArgumentException()
             => Assert.Throws<ArgumentNullException>(() => new Polynomial(null));
 
-        [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForVirtualEquals))]
+        [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForEquals))]
         public bool Equals_WithObjectParameter(Polynomial polynomial, object obj)
             => polynomial.Equals(obj);
 
@@ -63,7 +63,7 @@ namespace PolynomialTask.Tests
             });
         }
 
-        [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForInterfaceEquals))]
+        [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForEquals))]
         public bool Equals_WithPolynomialParameter(Polynomial polynomial, Polynomial other)
             => polynomial.Equals(other);
 
