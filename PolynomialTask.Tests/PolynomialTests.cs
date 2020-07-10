@@ -67,11 +67,11 @@ namespace PolynomialTask.Tests
         public bool Equals_WithPolynomialParameter(Polynomial polynomial, Polynomial other)
             => polynomial.Equals(other);
 
-        [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForInterfaceEquals))]
+        [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForEquals))]
         public bool OperatorEqual(Polynomial lhs, Polynomial rhs)
             => lhs == rhs;
 
-        [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForInterfaceEquals))]
+        [TestCaseSource(typeof(TestData), nameof(TestData.TestCasesForEquals))]
         public bool OperatorNotEqualTests(Polynomial lhs, Polynomial rhs)
             => !(lhs != rhs);
 
