@@ -23,7 +23,6 @@ namespace PolynomialTask.Tests
             }
             catch
             {
-                // ignored
             }
 
             Tolerance = Polynomial.AppSettings.Epsilon;
@@ -232,12 +231,12 @@ namespace PolynomialTask.Tests
         {
             get
             {
-                yield return new TestCaseData(new Polynomial(1.21394, 2.001, 3.3), -0.5, -3.25747);
-                yield return new TestCaseData(new Polynomial(-1, 0.2, 3.313, 0.004, 0.05, 0.16), -0.5, -1.3635);
-                yield return new TestCaseData(new Polynomial(3, 0.014, 1.004, 0), -0.5, 0.991);
-                yield return new TestCaseData(new Polynomial(1.21394, 2.001, 3.3), 1.5, 9.77241);
-                yield return new TestCaseData(new Polynomial(-1, 0.2, 3.313, 0.004, 0.05, 0.16), 1.5, 4.0905);
-                yield return new TestCaseData(new Polynomial(3, 0.014, 1.004, 0), 1.5, -2.973);
+                yield return new TestCaseData(new Polynomial(1.21394, 2.001, 3.3), -0.5, 1.03844);
+                yield return new TestCaseData(new Polynomial(-1, 0.2, 3.313, 0.004, 0.05, 0.16), -0.5,  -0.27412500000000006);
+                yield return new TestCaseData(new Polynomial(3, 0.014, 1.004, 0), -0.5, 3.2439999999999998);
+                yield return new TestCaseData(new Polynomial(1.21394, 2.001, 3.3), 1.5, 11.64044);
+                yield return new TestCaseData(new Polynomial(-1, 0.2, 3.313, 0.004, 0.05, 0.16), 1.5, 8.235875);
+                yield return new TestCaseData(new Polynomial(3, 0.014, 1.004, 0), 1.5, 5.2799999999999994);
             }
         }
     }
