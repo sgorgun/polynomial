@@ -29,44 +29,7 @@ namespace PolynomialTask.Tests
             Tolerance = Polynomial.AppSettings.Epsilon;
         }
 
-        public static IEnumerable<TestCaseData> TestCasesForVirtualEquals
-        {
-            get
-            {
-                yield return new TestCaseData(new Polynomial(1d, 2d, 3d), new Polynomial(1d, 2d, 3d)).Returns(true);
-                yield return new TestCaseData(new Polynomial(0.5), new Polynomial(0.5 - Tolerance))
-                    .Returns(true);
-                yield return new TestCaseData(new Polynomial(0, 0.1, 0.0001),
-                        new Polynomial(0, 0.1, 0.0001 + 0.1 * Tolerance))
-                    .Returns(true);
-                yield return new TestCaseData(new Polynomial(-10.123 + 0.1 * Tolerance, 5.89),
-                        new Polynomial(-10.123, 5.89 + 0.1 * Tolerance))
-                    .Returns(true);
-                yield return new TestCaseData(new Polynomial(1d, 2d, 3d),
-                    new Polynomial(1d, 2d, 3d + +0.01 * Tolerance)).Returns(true);
-                yield return new TestCaseData(new Polynomial(0.5),
-                    new Polynomial(0.5 - 0.001 * Tolerance)).Returns(true);
-                yield return new TestCaseData(new Polynomial(0, 0.1, 0.0001), new Polynomial(0, 0.1, 0.0001))
-                    .Returns(true);
-                yield return new TestCaseData(new Polynomial(-10.123, 0d, 5.89), new Polynomial(-10.123, -0d, 5.89))
-                    .Returns(true);
-                yield return new TestCaseData(new Polynomial(1d, 2d, 3d), new Polynomial(1.5, 2d, 3d)).Returns(false);
-                yield return new TestCaseData(new Polynomial(0.5),
-                    new Polynomial(0.5 + 200 * Tolerance)).Returns(false);
-                yield return new TestCaseData(new Polynomial(-100.123, 5.89, double.MinValue, double.MaxValue),
-                        new Polynomial(-10.123, 5.89, double.MinValue, double.MaxValue))
-                    .Returns(false);
-                yield return new TestCaseData(new Polynomial(-0.123, 0.0, -0.0),
-                        new Polynomial(-0.123 + 10 * Tolerance, 0.0, -0.0))
-                    .Returns(false);
-                yield return new TestCaseData(new Polynomial(1d, 2d, 3d), null).Returns(false);
-                yield return new TestCaseData(new Polynomial(-0.5, 0.5), new Polynomial(-0.5, 0.5, 0)).Returns(false);
-                yield return new TestCaseData(new Polynomial(0, 0.1, 0.0001), "Test string")
-                    .Returns(false);
-            }
-        }
-
-        public static IEnumerable<TestCaseData> TestCasesForInterfaceEquals
+        public static IEnumerable<TestCaseData> TestCasesForEquals
         {
             get
             {
