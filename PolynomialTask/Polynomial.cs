@@ -60,8 +60,8 @@ namespace PolynomialTask
         /// <exception cref="ArgumentOutOfRangeException">Index is not a valid.</exception>
         public double this[int index]
         {
-		    get => throw new NotImplementedException("You need to implement this function.");
-		    private set => throw new NotImplementedException("You need to implement this function.");
+            get => throw new NotImplementedException("You need to implement this function.");
+            private set => throw new NotImplementedException("You need to implement this function.");
 	    }
 
         /// <summary>
