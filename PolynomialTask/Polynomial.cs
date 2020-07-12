@@ -59,7 +59,10 @@ namespace PolynomialTask
         /// <returns>The polynomial coefficient associated with the specified index.</returns>
         /// <exception cref="ArgumentOutOfRangeException">Index is not a valid.</exception>
         public double this[int index]
-            => throw new NotImplementedException("You need to implement this function.");
+        {
+		    get => throw new NotImplementedException("You need to implement this function.");
+		    private set => throw new NotImplementedException("You need to implement this function.");
+	    }
 
         /// <summary>
         /// Determines whether or not polynomials are equal based on the equality of the coefficients at the same degrees.
