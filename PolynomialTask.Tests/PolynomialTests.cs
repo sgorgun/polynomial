@@ -133,6 +133,7 @@ namespace PolynomialTask.Tests
             Assert.Multiple(() =>
             {
                 Assert.AreEqual(polynomial, clone);
+                Assert.That(ReferenceEquals(polynomial,clone) == false);
                 Assert.AreSame(fieldInfo?.GetValue(polynomial), fieldInfo?.GetValue(clone));
             });
         }
