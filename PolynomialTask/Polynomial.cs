@@ -37,7 +37,7 @@ namespace PolynomialTask
         /// 0.16*x^5+0.05*x^4+0.004*x^3+3.313*x^2+0.2*x-1 -> { -1, 0.2, 3.313, 0.004, 0.05, 0.16 };
         /// 3.3*x^2+2.001*x+1.21394 -> { 1.21394, 2.001, 3.3 }.
         /// </example>
-        public Polynomial(params double[] coefficients)
+        public Polynomial(params double[]? coefficients)
         {
             throw new NotImplementedException("You need to implement this method.");
         }
@@ -212,7 +212,7 @@ namespace PolynomialTask
         /// </summary>
         /// <param name="obj">The object to equality compare.</param>
         /// <returns>true if polynomials are equal; otherwise, false.</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             throw new NotImplementedException("You need to implement this method.");
         }
@@ -223,7 +223,7 @@ namespace PolynomialTask
         /// </summary>
         /// <param name="other">The polynomial to equality compare.</param>
         /// <returns>true if polynomials are equal; otherwise, false.</returns>
-        public bool Equals(Polynomial other)
+        public bool Equals(Polynomial? other)
         {
             throw new NotImplementedException("You need to implement this method.");
         }

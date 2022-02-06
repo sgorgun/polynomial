@@ -1,5 +1,3 @@
-#nullable enable
-
 using System;
 using System.Reflection;
 using NUnit.Framework;
@@ -16,7 +14,8 @@ namespace PolynomialTask.Tests
         {
             Polynomial polynomial = new Polynomial(coefficients);
 
-            FieldInfo? fieldInfo = polynomial.GetType().GetField("coefficients", BindingFlags.NonPublic | BindingFlags.Instance);
+            FieldInfo? fieldInfo = polynomial.GetType()
+                .GetField("coefficients", BindingFlags.NonPublic | BindingFlags.Instance);
 
             var polynomialCoefficient = fieldInfo?.GetValue(polynomial);
 
@@ -31,15 +30,25 @@ namespace PolynomialTask.Tests
         [Test]
         public void Constructor_ArrayIsNull_ThrowArgumentNullException()
         {
-            Assert.Throws<ArgumentNullException>(() => { var polynomial = new Polynomial(null); }, "Coefficients cannot be null.");
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                var polynomial = new Polynomial(null);
+            }, "Coefficients cannot be null.");
         }
 
         [Test]
         public void Constructor_ArrayIsEmpty_ThrowArgumentException()
-            => Assert.Throws<ArgumentException>(() => { var polynomial = new Polynomial(Array.Empty<double>()); }, "Coefficients cannot be empty.");
+            => Assert.Throws<ArgumentException>(() =>
+            {
+                var polynomial = new Polynomial(Array.Empty<double>());
+            }, "Coefficients cannot be empty.");
 
         [Test]
-        public void Constructor_ArrayIsNull_ThrowArgumentException() => Assert.Throws<ArgumentNullException>(() => new Polynomial(null));
+        public void Constructor_ArrayIsNull_ThrowArgumentException() =>
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                var polynomial = new Polynomial(null);
+            });
 
         [TestCaseSource(typeof(TestCasesData), nameof(TestCasesData.TestCasesForEquals))]
         public bool Equals_WithObjectParameter(Polynomial polynomial, object obj) => polynomial.Equals(obj);
@@ -115,7 +124,8 @@ namespace PolynomialTask.Tests
         }
 
         [TestCaseSource(typeof(TestCasesData), nameof(TestCasesData.TestCasesForOperationException))]
-        public void Multiplication_OneOfPolynomialsIsEqualsNull_ThrowArgumentNullException(Polynomial lhs, Polynomial rhs)
+        public void Multiplication_OneOfPolynomialsIsEqualsNull_ThrowArgumentNullException(Polynomial lhs,
+            Polynomial rhs)
         {
             Assert.Throws<ArgumentNullException>(() =>
             {
@@ -128,12 +138,13 @@ namespace PolynomialTask.Tests
         {
             Polynomial clone = (Polynomial)polynomial.Clone();
 
-            FieldInfo? fieldInfo = polynomial.GetType().GetField("coefficients", BindingFlags.NonPublic | BindingFlags.Instance);
+            FieldInfo? fieldInfo = polynomial.GetType()
+                .GetField("coefficients", BindingFlags.NonPublic | BindingFlags.Instance);
 
             Assert.Multiple(() =>
             {
                 Assert.AreEqual(polynomial, clone);
-                Assert.That(ReferenceEquals(polynomial,clone) == false);
+                Assert.That(ReferenceEquals(polynomial, clone) == false);
                 Assert.AreSame(fieldInfo?.GetValue(polynomial), fieldInfo?.GetValue(clone));
             });
         }
@@ -151,7 +162,8 @@ namespace PolynomialTask.Tests
         [TestCaseSource(typeof(TestCasesData), nameof(TestCasesData.TestCasesForGetCoefficients))]
         public void GetCoefficients_Return_CopyOfCoefficients(Polynomial polynomial)
         {
-            FieldInfo? fieldInfo = polynomial.GetType().GetField("coefficients", BindingFlags.NonPublic | BindingFlags.Instance);
+            FieldInfo? fieldInfo = polynomial.GetType()
+                .GetField("coefficients", BindingFlags.NonPublic | BindingFlags.Instance);
 
             var polynomialCoefficient = fieldInfo?.GetValue(polynomial);
 
