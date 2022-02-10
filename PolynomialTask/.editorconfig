@@ -1,1 +1,3 @@
 root = false
+[*.cs]
+dotnet_diagnostic.SA1600.severity=error

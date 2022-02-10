@@ -2,8 +2,6 @@ using System;
 using System.Reflection;
 using NUnit.Framework;
 
-#pragma warning disable CA1707
-
 namespace PolynomialTask.Tests
 {
     [TestFixture]

@@ -20,12 +20,9 @@ namespace PolynomialTask
         /// </summary>
         static Polynomial()
         {
-            AppSettings = new AppSettings
-            {
-                Epsilon = double.Epsilon,
-            };
+            AppSettings = new AppSettings { Epsilon = double.Epsilon, };
         }
-        
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Polynomial"/> class.
         /// </summary>
@@ -41,7 +38,7 @@ namespace PolynomialTask
         {
             throw new NotImplementedException("You need to implement this method.");
         }
-        
+
         /// <summary>
         /// Gets the AppSettings value.
         /// <see cref="AppSettings"/> class.
@@ -85,7 +82,7 @@ namespace PolynomialTask
         /// (3.3*x^2+2.001*x+1.21394) + (0.002*x+0.1) => 3.3*x^2+2.003*x+1.31394;
         /// (0.16*x^5+0.05*x^4+0.004*x^3+3.313*x^2+0.2*x-1) + (-4.4*x^3+3.3*x^2-2.2*x+1.1) => 0.16*x^5+0.05*x^4-4.396*x^3+6.613*x^2-2*x+0.1.
         /// </example>
-        public static Polynomial operator +(Polynomial lhs, Polynomial rhs)
+        public static Polynomial operator +(Polynomial? lhs, Polynomial? rhs)
         {
             throw new NotImplementedException("You need to implement this method.");
         }
@@ -101,7 +98,7 @@ namespace PolynomialTask
         /// (0.002*x+0.1) - (3.3*x^2+2.001*x+1.21394) = -3.3*x^2-1.999*x-1.11394;
         /// (9*x^5-0.896*x^4+4.879*x^3+3.987*x^2-2.569*x+1.204) - (4*x^3-3*x^2-2*x+1) = 9*x^5-0.896*x^4+0.879*x^3+6.987*x^2-0.569*x+0.204.
         /// </example>
-        public static Polynomial operator -(Polynomial lhs, Polynomial rhs)
+        public static Polynomial operator -(Polynomial? lhs, Polynomial? rhs)
         {
             throw new NotImplementedException("You need to implement this method.");
         }
@@ -117,7 +114,7 @@ namespace PolynomialTask
         /// (3.3*x^2+2.001*x+1.21394) * (0.002*x+0.1) = 0.0066*x^3+0.334*x^2+0.20253*x+0.12139;
         /// (0.16*x^5+0.05*x^4+0.004*x^3+3.313*x^2+0.2*x-1) * (-4.4*x^3+3.3*x^2-2.2*x+1.1) = -0.704*x^8+0.308*x^7-0.2046*x^6-14.498*x^5+10.0991*x^4-2.2242*x^3-0.0957*x^2+2.42*x-1.1.
         /// </example>
-        public static Polynomial operator *(Polynomial lhs, Polynomial rhs)
+        public static Polynomial operator *(Polynomial? lhs, Polynomial? rhs)
         {
             throw new NotImplementedException("You need to implement this method.");
         }
@@ -135,7 +132,7 @@ namespace PolynomialTask
         /// -0.123 = -0.1230000065, if Polynomial.AppSettings.Epsilon = 0.00001.
         /// -0.123 != -0.123065, if Polynomial.AppSettings.Epsilon = 0.00001.
         /// </example>
-        public static bool operator ==(Polynomial lhs, Polynomial rhs)
+        public static bool operator ==(Polynomial? lhs, Polynomial? rhs)
         {
             throw new NotImplementedException("You need to implement this method.");
         }
@@ -153,7 +150,7 @@ namespace PolynomialTask
         /// -0.123 = -0.1230000065, if Polynomial.AppSettings.Epsilon = 0.00001.
         /// -0.123 != -0.123065, if Polynomial.AppSettings.Epsilon = 0.00001.
         /// </example>
-        public static bool operator !=(Polynomial lhs, Polynomial rhs)
+        public static bool operator !=(Polynomial? lhs, Polynomial? rhs)
         {
             throw new NotImplementedException("You need to implement this method.");
         }
@@ -169,7 +166,7 @@ namespace PolynomialTask
         /// (3.3*x^2+2.001*x+1.21394) + (0.002*x+0.1) => 3.3*x^2+2.003*x+1.31394;
         /// (0.16*x^5+0.05*x^4+0.004*x^3+3.313*x^2+0.2*x-1) + (-4.4*x^3+3.3*x^2-2.2*x+1.1) => 0.16*x^5+0.05*x^4-4.396*x^3+6.613*x^2-2*x+0.1.
         /// </example>
-        public static Polynomial Add(Polynomial lhs, Polynomial rhs)
+        public static Polynomial Add(Polynomial? lhs, Polynomial? rhs)
         {
             throw new NotImplementedException("You need to implement this method.");
         }
@@ -185,7 +182,7 @@ namespace PolynomialTask
         /// (0.002*x+0.1) - (3.3*x^2+2.001*x+1.21394) = -3.3*x^2-1.999*x-1.11394;
         /// (9*x^5-0.896*x^4+4.879*x^3+3.987*x^2-2.569*x+1.204) - (4*x^3-3*x^2-2*x+1) = 9*x^5-0.896*x^4+0.879*x^3+6.987*x^2-0.569*x+0.204.
         /// </example>
-        public static Polynomial Subtract(Polynomial lhs, Polynomial rhs)
+        public static Polynomial Subtract(Polynomial? lhs, Polynomial? rhs)
         {
             throw new NotImplementedException("You need to implement this method.");
         }
@@ -201,7 +198,7 @@ namespace PolynomialTask
         /// (3.3*x^2+2.001*x+1.21394) * (0.002*x+0.1) = 0.0066*x^3+0.334*x^2+0.20253*x+0.12139;
         /// (0.16*x^5+0.05*x^4+0.004*x^3+3.313*x^2+0.2*x-1) * (-4.4*x^3+3.3*x^2-2.2*x+1.1) = -0.704*x^8+0.308*x^7-0.2046*x^6-14.498*x^5+10.0991*x^4-2.2242*x^3-0.0957*x^2+2.42*x-1.1.
         /// </example>
-        public static Polynomial Multiply(Polynomial lhs, Polynomial rhs)
+        public static Polynomial Multiply(Polynomial? lhs, Polynomial? rhs)
         {
             throw new NotImplementedException("You need to implement this method.");
         }
@@ -273,12 +270,21 @@ namespace PolynomialTask
         {
             throw new NotImplementedException("You need to implement this method.");
         }
-        
+
         /// <summary>
         /// Creates a shallow copy.
         /// </summary>
         /// <returns>A shallow copy.</returns>
-        public object Clone()
+        public Polynomial Clone()
+        {
+            throw new NotImplementedException("You need to implement this method.");
+        }
+
+        /// <summary>
+        /// Creates a shallow copy.
+        /// </summary>
+        /// <returns>A shallow copy.</returns>
+        object ICloneable.Clone()
         {
             throw new NotImplementedException("You need to implement this method.");
         }
